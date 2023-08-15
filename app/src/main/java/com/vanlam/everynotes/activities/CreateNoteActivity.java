@@ -1,10 +1,12 @@
-package com.vanlam.everynotes;
+package com.vanlam.everynotes.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.vanlam.everynotes.R;
 
 public class CreateNoteActivity extends AppCompatActivity {
 
