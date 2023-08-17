@@ -1,8 +1,11 @@
 package com.vanlam.everynotes.adapters;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,12 +49,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
 
     static class NoteViewHolder extends RecyclerView.ViewHolder {
         private TextView textTitle, textSubtitle, textDateTime;
+        private LinearLayout layoutNote;
 
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
             this.textTitle = (TextView) itemView.findViewById(R.id.textTitle);
             this.textSubtitle = (TextView) itemView.findViewById(R.id.textSubtitle);
             this.textDateTime = (TextView) itemView.findViewById(R.id.textDateTime);
+            this.layoutNote = (LinearLayout) itemView.findViewById(R.id.layoutNote);
         }
 
         public void setNote(Note note) {
@@ -63,6 +68,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
                 textSubtitle.setText(note.getSubtitle());
             }
             textDateTime.setText(note.getDateTime());
+
+            GradientDrawable gradientDrawable = (GradientDrawable) layoutNote.getBackground();
+            if (note.getColor() != null) {
+                gradientDrawable.setColor(Color.parseColor(note.getColor()));
+            }
+            else {
+                gradientDrawable.setColor(Color.parseColor("#333333"));
+            }
         }
 
         public TextView getTextTitle() {
