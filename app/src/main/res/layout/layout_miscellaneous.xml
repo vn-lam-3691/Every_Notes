@@ -203,4 +203,35 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/layoutDeleteNote"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:visibility="gone"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="@string/app_name"
+            app:tint="@color/colorDelete" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="@string/delete_note"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/colorDelete"/>
+
+    </LinearLayout>
+
 </LinearLayout>
